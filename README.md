@@ -4,7 +4,7 @@ AutoPromptX is a command-line tool that helps developers prototype, test, and ma
 
 ---
 
-## ✨ Features
+##  Features
 
 - Save and reuse prompts using text-based templates
 - Modular prompt chaining support
@@ -14,7 +14,7 @@ AutoPromptX is a command-line tool that helps developers prototype, test, and ma
 
 ---
 
-## 🧰 Technologies
+##  Technologies
 
 - Python
 - OpenAI API
@@ -38,7 +38,7 @@ AutoPromptX/
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 ```bash
 pip install openai
@@ -48,19 +48,19 @@ python autopromptx.py
 
 ---
 
-## 💬 Sample Prompts
+##  Sample Prompts
 
 Templates are stored in `/prompt_templates/`. You can edit or add your own to keep prompts organized.
 
 ---
 
-## 👥 Audience
+##  Audience
 
 Ideal for students, AI learners, and junior developers exploring GenAI workflows.
 
 ---
 
-## 📦 Future Ideas
+##  Future Ideas
 
 - Streamlit GUI wrapper
 - VS Code extension for inline prompt testing
