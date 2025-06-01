@@ -1,4 +1,4 @@
-# AutoPromptX Enhanced - User Guide
+# AutoPromptX 
 
 ## Overview
 
