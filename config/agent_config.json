@@ -1,0 +1,7 @@
+{
+  "SummarizerAgent": "t5-small",
+  "CodeReviewerAgent": "Salesforce/codet5-small",
+  "PersonaAgent": "flan-t5-base",
+  "FollowUpAgent": "flan-t5-base",
+  "ClarityAgent": "flan-t5-base"
+}

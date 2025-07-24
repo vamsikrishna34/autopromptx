@@ -1,0 +1,7 @@
+{
+  "SummarizerAgent": "Summarize the following text:\n{input}",
+  "CodeReviewerAgent": "Review this code and suggest improvements:\n{input}",
+  "PersonaAgent": "Rewrite this text in a friendly and engaging tone:\n{input}",
+  "FollowUpAgent": "What are the next steps or follow-up actions based on this?\n{input}",
+  "ClarityAgent": "Rate the clarity of this text from 1 to 10 and suggest improvements:\n{input}"
+}
