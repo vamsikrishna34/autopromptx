@@ -17,7 +17,7 @@ AutoPromptX is a modular, multi-agent GenAI orchestration tool built with Huggin
 
 ---
 
-## 📦 Folder Structure
+##  Folder Structure
 
 ```bash
 autopromptx/
