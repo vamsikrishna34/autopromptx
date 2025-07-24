@@ -1,0 +1,10 @@
+{
+  "goal": "Summarize and optimize content for SEO",
+  "agents": [
+    "SummarizerAgent",
+    "PersonaAgent",
+    "ClarityAgent"
+  ],
+  "input_type": "text",
+  "output_format": "summary + rewritten + clarity score"
+}

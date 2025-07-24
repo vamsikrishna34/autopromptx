@@ -1,0 +1,10 @@
+{
+  "goal": "Review code and suggest improvements",
+  "agents": [
+    "CodeReviewerAgent",
+    "ClarityAgent",
+    "FollowUpAgent"
+  ],
+  "input_type": "code",
+  "output_format": "annotated + suggestions"
+}

@@ -1,0 +1,17 @@
+{
+  "t5-small": {
+    "task": "summarization",
+    "size": "small",
+    "speed": "fast"
+  },
+  "flan-t5-base": {
+    "task": "text2text-generation",
+    "size": "medium",
+    "speed": "fast"
+  },
+  "Salesforce/codet5-small": {
+    "task": "text2text-generation",
+    "size": "small",
+    "speed": "fast"
+  }
+}
