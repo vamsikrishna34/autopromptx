@@ -1,4 +1,4 @@
-document.getElementById("agentForm").addEventListener("submit", function (e) {
+document.getElementById("agentForm").addEventListener("submit", async function (e) {
   e.preventDefault();
 
   const agent = document.getElementById("agentSelect").value;
@@ -12,26 +12,29 @@ document.getElementById("agentForm").addEventListener("submit", function (e) {
     return;
   }
 
-  // Show loading spinner
   outputText.innerHTML = `<div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div>`;
   outputCard.style.display = "block";
 
-  // Simulate processing delay
-  setTimeout(() => {
-    const output = `
+  try {
+    const response = await fetch("http://localhost:8000/api/run-agent", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        agent_name: agent,
+        input_text: input,
+        model_name: model || null
+      })
+    });
+
+    const data = await response.json();
+    outputText.innerHTML = `
       <strong>Agent:</strong> ${agent}<br>
       <strong>Model:</strong> ${model || "auto"}<br>
       <strong>Output:</strong><br>
-      <em>[Mocked response for "${input}"]</em>
+      <em>${data.output}</em>
     `;
-    outputText.innerHTML = output;
-
-    // Optional: scroll to output
     outputCard.scrollIntoView({ behavior: "smooth" });
-  }, 1000);
-});
-
-// Enable Bootstrap tooltips
-document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
-  new bootstrap.Tooltip(el);
+  } catch (error) {
+    outputText.innerHTML = `<span class="text-danger">Error: ${error.message}</span>`;
+  }
 });
