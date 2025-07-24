@@ -5,38 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AutoPromptX</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" />
 </head>
 <body>
-  <div class="container mt-5">
-    <h1 class="text-center mb-4">AutoPromptX</h1>
+  <div class="container mt-4">
+    <!-- Hero Header -->
+    <div class="p-4 mb-4 text-white rounded animate__animated animate__fadeInDown" style="background: linear-gradient(to right, #0d6efd, #6610f2);">
+      <h1 class="display-5">AutoPromptX</h1>
+      <p class="lead">Modular GenAI agent orchestration with clarity, control, and fallback logic.</p>
+    </div>
 
     <div class="row">
       <!-- Form Section -->
-      <div class="col-md-8">
+      <div class="col-md-8 animate__animated animate__fadeInLeft">
         <form id="agentForm">
-          <div class="mb-3">
-            <label for="agentSelect" class="form-label">Choose Agent</label>
-            <select class="form-select" id="agentSelect">
-              <option>SummarizerAgent</option>
-              <option>CodeReviewerAgent</option>
-              <option>PersonaAgent</option>
-              <option>FollowUpAgent</option>
-              <option>ClarityAgent</option>
-            </select>
+          <div class="card mb-3">
+            <div class="card-body">
+              <label for="agentSelect" class="form-label">Choose Agent</label>
+              <select class="form-select" id="agentSelect">
+                <option>SummarizerAgent</option>
+                <option>CodeReviewerAgent</option>
+                <option>PersonaAgent</option>
+                <option>FollowUpAgent</option>
+                <option>ClarityAgent</option>
+              </select>
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="modelSelect" class="form-label">Choose Model <span class="text-muted">(optional)</span></label>
-            <input type="text" class="form-control" id="modelSelect" placeholder="e.g. t5-small" />
+
+          <div class="card mb-3">
+            <div class="card-body">
+              <label for="modelSelect" class="form-label">Choose Model <span class="text-muted">(optional)</span></label>
+              <input type="text" class="form-control" id="modelSelect" placeholder="e.g. t5-small" />
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="inputText" class="form-label">Input Text</label>
-            <textarea class="form-control" id="inputText" rows="5"></textarea>
+
+          <div class="card mb-3">
+            <div class="card-body">
+              <label for="inputText" class="form-label">Input Text</label>
+              <textarea class="form-control" id="inputText" rows="5"></textarea>
+            </div>
           </div>
+
           <button type="submit" class="btn btn-primary">Run Agent</button>
         </form>
 
-        <div class="mt-4" id="outputCard" style="display: none;">
+        <div class="mt-4 animate__animated animate__fadeInUp" id="outputCard" style="display: none;">
           <h5>Output</h5>
           <div class="card p-3 bg-light">
             <pre id="outputText"></pre>
@@ -45,36 +60,48 @@
       </div>
 
       <!-- Sidebar Section -->
-      <div class="col-md-4">
+      <div class="col-md-4 animate__animated animate__fadeInRight">
         <div class="card p-3 bg-white shadow-sm">
-          <h5 class="mb-3">Agent Reference</h5>
+          <h5 class="mb-3 text-primary">Agent Reference</h5>
           <ul class="list-group">
             <li class="list-group-item d-flex justify-content-between">
-              <span>SummarizerAgent</span>
+              <span data-bs-toggle="tooltip" title="Summarizes input text">📝 SummarizerAgent</span>
               <span class="badge bg-primary">t5-small</span>
             </li>
             <li class="list-group-item d-flex justify-content-between">
-              <span>CodeReviewerAgent</span>
+              <span data-bs-toggle="tooltip" title="Reviews and improves code">💻 CodeReviewerAgent</span>
               <span class="badge bg-primary">codet5-small</span>
             </li>
             <li class="list-group-item d-flex justify-content-between">
-              <span>PersonaAgent</span>
+              <span data-bs-toggle="tooltip" title="Adjusts tone and style">🎭 PersonaAgent</span>
               <span class="badge bg-primary">flan-t5-base</span>
             </li>
             <li class="list-group-item d-flex justify-content-between">
-              <span>FollowUpAgent</span>
+              <span data-bs-toggle="tooltip" title="Suggests next steps">🔁 FollowUpAgent</span>
               <span class="badge bg-primary">flan-t5-base</span>
             </li>
             <li class="list-group-item d-flex justify-content-between">
-              <span>ClarityAgent</span>
+              <span data-bs-toggle="tooltip" title="Improves clarity and scores text">🔍 ClarityAgent</span>
               <span class="badge bg-primary">flan-t5-base</span>
             </li>
           </ul>
         </div>
       </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="mt-5 text-center animate__animated animate__fadeInUp">
+      <p class="text-muted">Built by <a href="https://github.com/vamsikrishna34" target="_blank">VamsiKrishna Nallagatla</a></p>
+      <p class="text-muted">Deployment link: <a href="https://vamsikrishna-nallagatla.github.io/AutoPromptX/" target="_blank">View Deployment</a></p>
+    </footer>
   </div>
 
   <script src="script.js"></script>
+  <script>
+    // Enable Bootstrap tooltips
+    document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
+      new bootstrap.Tooltip(el);
+    });
+  </script>
 </body>
 </html>
