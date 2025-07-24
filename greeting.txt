@@ -1,1 +1,0 @@
-Write a friendly greeting message that uses the user's name and sounds casual.
