@@ -76,5 +76,5 @@ Testing
 bash
 pytest tests/
 
-Deployment link:
+Deployment link: https://vamsikrishna34.github.io/autopromptx/
 Built by VamsiKrishna Nallagatla
