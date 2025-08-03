@@ -1,18 +1,22 @@
-# Use official Python base image
-FROM python:3.10-slim
+# Use Python base image
+FROM python:3.9
+
+# Create user
+RUN useradd -m -u 1000 user
+USER user
 
 # Set working directory
 WORKDIR /app
 
-# Copy requirements and install dependencies
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# Set PATH
+ENV PATH="/home/user/.local/bin:$PATH"
 
-# Copy all backend files
-COPY . .
+# Install dependencies
+COPY --chown=user ./requirements.txt requirements.txt
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
-# Expose port for FastAPI
-EXPOSE 10000
+# Copy app code
+COPY --chown=user . /app
 
-# Start FastAPI app with Uvicorn
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "10000"]
+# Run FastAPI app
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "7860"]
